@@ -1,0 +1,11 @@
+/* carrito.css */
+.cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cartIcon {
+    color: #ddd;
+    font-size: 24px; /* Puedes ajustar el tamaño según lo necesites */
+  }
