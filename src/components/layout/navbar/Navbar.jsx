@@ -11,13 +11,8 @@ export const Navbar = () => {
 
             <ul className="navMenu">
                 <li>IPhone</li>
-                <li>IPad</li>
-                <li>MacBook Air</li>
-                <li>Mac</li>
-                <li>Samsung</li>
+                <li>Android</li>
                 <li>Accesorios</li>
-                <li>Vision Pro</li>
-                <li>AirPods</li>
                 <li>Mas</li>
             </ul>
         
