@@ -11,25 +11,23 @@
   align-items: center;
   text-align: center;
   background-color: #fff;
-}
-
-.card:hover {
-  transform: scale(1.03);
+  margin: 0; /* Asegúrate de que no haya margen */
 }
 
 .cardImage {
-  height: 80%;
+  height: 150px; /* Fija la altura para que todas las imágenes tengan el mismo tamaño */
   width: 100%;
   object-fit: cover;
   object-position: center;
-  margin-bottom: 10px;
-  padding: 10px;  
-        
 }
 
 .cardInfo {
   padding: 15px;
   width: 100%;
+}
+
+.card:hover {
+  transform: scale(1.03);
 }
 
 .cardTitle {
@@ -66,4 +64,11 @@
 
 .cardButton:hover {
   background-color: #21867a;
+}
+
+.cardDescription {
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+  text-align: left;
 }

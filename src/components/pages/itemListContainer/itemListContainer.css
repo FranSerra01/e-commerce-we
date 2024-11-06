@@ -1,13 +1,13 @@
 .itemListContainer {
-    display: grid;
-    gap: 20px; /* Espacio entre las tarjetas */
-    padding: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: grid;
+  gap: 10px; /* Ajusta este valor si necesitas más o menos espacio */
+  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+@media (max-width: 768px) {
+  .itemListContainer {
+    grid-template-columns: 1fr; /* Solo una columna en pantallas pequeñas */
   }
-  
-  @media (max-width: 768px) {
-    .itemListContainer {
-      grid-template-columns: 1fr; /* Solo una columna en pantallas pequeñas */
-    }
-  }
+}
   

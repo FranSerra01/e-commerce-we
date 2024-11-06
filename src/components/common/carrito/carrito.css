@@ -1,11 +1,24 @@
-/* carrito.css */
 .cart {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .cartIcon {
-    color: #ddd;
-    font-size: 24px; /* Puedes ajustar el tamaño según lo necesites */
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cartIcon {
+  color: #ddd;
+  font-size: 24px;
+}
+
+/* Contador del carrito */
+.itemCount {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: #2a9d8f;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+}

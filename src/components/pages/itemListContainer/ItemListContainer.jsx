@@ -1,51 +1,55 @@
-import { Card } from "../../common/card/Card"
-import "./itemListContainer.css"
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Card } from "../../common/card/Card";
+import { products } from "../../../products";
+import "./itemListContainer.css";
 
 export const ItemListContainer = () => {
+  const { categoryId } = useParams();
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  useEffect(() => {
+    // Simulación de una promesa para cargar productos
+    const fetchProducts = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(products);
+      }, 500); // Simulación de carga de 500 ms
+    });
+
+    fetchProducts.then((data) => {
+      // Verifica si categoryId es "home" o undefined; en ese caso, muestra todos los productos
+      if (!categoryId || categoryId.toLowerCase() === "home") {
+        setFilteredProducts(data); // Muestra todos los productos cuando estás en "/" o "/category/home"
+      } else {
+        // Filtra por categoría si categoryId es distinto de "home"
+        const filtered = data.filter((product) =>
+          product.name.toLowerCase().includes(categoryId.toLowerCase())
+        );
+        setFilteredProducts(filtered);
+      }
+    });
+  }, [categoryId]); // Ejecuta el efecto cuando cambia categoryId
+
   return (
     <div className="itemListContainer">
-        <Card
-            image="https://res.cloudinary.com/drj90xkqr/image/upload/v1730765804/iphone_16_pro_max_1tb_decierto_zaisuf.png"
-            title="iPhone 16 Pro Max (1 TB) - Titanio del desierto"
-            price="5.499.990"
-            model="Pro Max (1 TB)"
-            color="Titanio del desierto"
-        />
-        <Card
-            image="https://res.cloudinary.com/drj90xkqr/image/upload/v1730772595/samnsung_a55_225gb_navy_m8qmgf.png"
-            title="Samsung Galaxy A55 (256GB) - Awesome navy"
-            price="906.199"
-            model="A55"
-            color="Awesome navy"
-        />
-        <Card
-            image="https://via.placeholder.com/250https://res.cloudinary.com/drj90xkqr/image/upload/v1730765804/iphone_16_pro_max_1tb_decierto_zaisuf.png"
-            title="iPhone 16 Pro Max (1 TB) - Titanio del desierto"
-            price="5.499.990"
-            model="Pro Max (1 TB)"
-            color="Titanio del desierto"
-        />
-        <Card
-            image="https://via.placeholder.com/250https://res.cloudinary.com/drj90xkqr/image/upload/v1730765804/iphone_16_pro_max_1tb_decierto_zaisuf.png"
-            title="iPhone 16 Pro Max (1 TB) - Titanio del desierto"
-            price="5.499.990"
-            model="Pro Max (1 TB)"
-            color="Titanio del desierto"
-        />
-        <Card
-            image="https://via.placeholder.com/250https://res.cloudinary.com/drj90xkqr/image/upload/v1730765804/iphone_16_pro_max_1tb_decierto_zaisuf.png"
-            title="iPhone 16 Pro Max (1 TB) - Titanio del desierto"
-            price="5.499.990"
-            model="Pro Max (1 TB)"
-            color="Titanio del desierto"
-        />
-        <Card
-            image="https://via.placeholder.com/250https://res.cloudinary.com/drj90xkqr/image/upload/v1730765804/iphone_16_pro_max_1tb_decierto_zaisuf.png"
-            title="iPhone 16 Pro Max (1 TB) - Titanio del desierto"
-            price="5.499.990"
-            model="Pro Max (1 TB)"
-            color="Titanio del desierto"
-        />
+      {filteredProducts.length > 0 ? (
+        filteredProducts.map((product) => (
+            <Card
+            key={product.id}
+            id={product.id}
+            image={product.image}
+            title={product.name}
+            price={product.price}
+            model={product.model}
+            color={product.color}
+            description={product.description}
+          />
+        ))
+      ) : (
+        <p>No hay productos disponibles en esta categoría.</p>
+      )}
     </div>
-  )
-}
+  );
+};
+
+
