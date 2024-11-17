@@ -1,12 +1,19 @@
-import { useState } from 'react';
-import './card.css';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useCart } from "../../../context/CartContext"; // Importa el contexto del carrito
+import "./card.css";
 
 export const Card = ({ id, image, title, price, model, color, description }) => {
   const [showDescription, setShowDescription] = useState(false);
+  const { addToCart } = useCart(); // Usa la función addToCart del contexto
 
   const toggleDescription = () => {
     setShowDescription(!showDescription);
+  };
+
+  const handleAddToCart = () => {
+    const product = { id, image, title, price, model, color, description };
+    addToCart(product); // Agrega el producto al carrito
   };
 
   return (
@@ -23,6 +30,9 @@ export const Card = ({ id, image, title, price, model, color, description }) => 
           {showDescription ? "Ocultar Descripción" : "Descripción"}
         </button>
         {showDescription && <p className="cardDescription">{description}</p>}
+        <button className="addToCartButton" onClick={handleAddToCart}>
+          Agregar al carrito
+        </button>
       </div>
     </div>
   );

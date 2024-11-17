@@ -72,3 +72,19 @@
   margin-top: 10px;
   text-align: left;
 }
+
+.addToCartButton {
+  background-color: #ff6f61;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.addToCartButton:hover {
+  background-color: #e65a4e;
+}
