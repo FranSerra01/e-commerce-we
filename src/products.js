@@ -1,3 +1,5 @@
+/* src\products.js */
+
 export const products = [
     {
         id: 1,

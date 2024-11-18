@@ -1,3 +1,5 @@
+/* src\components\common\card\Card.jsx */
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../../../context/CartContext"; // Importa el contexto del carrito

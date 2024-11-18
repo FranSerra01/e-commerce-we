@@ -1,3 +1,5 @@
+/* src\components\layout\navbar\Navbar.jsx */
+
 import { Link } from "react-router-dom";
 import { Carrito } from "../../common/carrito/Carrito";
 import "./navbar.css";

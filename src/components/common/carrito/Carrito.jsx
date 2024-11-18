@@ -1,3 +1,5 @@
+/* src\components\common\carrito\Carrito.jsx */
+
 import './carrito.css';
 import { IoMdCart } from "react-icons/io";
 import { Link } from "react-router-dom";

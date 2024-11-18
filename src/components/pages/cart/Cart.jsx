@@ -1,3 +1,5 @@
+/* src\components\pages\cart\Cart.jsx */
+
 import { useCart } from "../../../context/CartContext";
 import "./cart.css";
 

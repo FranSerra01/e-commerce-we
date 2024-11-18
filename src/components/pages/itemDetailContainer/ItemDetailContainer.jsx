@@ -1,3 +1,5 @@
+/* src\components\pages\itemDetailContainer\ItemDetailContainer.jsx */
+
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { products } from "../../../products"; 

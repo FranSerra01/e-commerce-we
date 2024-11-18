@@ -1,3 +1,5 @@
+/* src\components\layout\footer\Footer.jsx */
+
 import './footer.css';
 
 export const Footer = () => {

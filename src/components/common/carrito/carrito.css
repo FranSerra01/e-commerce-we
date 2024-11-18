@@ -1,3 +1,5 @@
+/* src\components\common\carrito\carrito.css */
+
 .cart {
   display: flex;
   align-items: center;
@@ -10,7 +12,6 @@
   font-size: 24px;
 }
 
-/* Contador del carrito */
 .itemCount {
   position: absolute;
   top: -5px;
